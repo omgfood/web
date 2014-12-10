@@ -1,6 +1,7 @@
 $('#Take-Picture').change( function() {
   $(".file-upload").hide();
   $("canvas").show();
+  $('.result').text('Uploading image...');
 });
 
 var takePicture = document.querySelector("#Take-Picture"),
@@ -18,7 +19,7 @@ JOB.SetImageCallback(function(result) {
       $('.result').html("Querying TESCO API.....");
       $.get(
         "/barcode_search",
-        'id=' + 5018357009916,
+        'id=' + result[i].Value,
         function(response) {
           console.log(response);
           if(response == 'notfound'){
