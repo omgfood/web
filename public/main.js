@@ -2,6 +2,7 @@ $('#Take-Picture').change( function() {
   $(".file-upload").hide();
   $("canvas").show();
   $('.result').text('Uploading image...');
+  $('.another_wrap').show();
 });
 
 var takePicture = document.querySelector("#Take-Picture"),

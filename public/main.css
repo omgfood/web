@@ -8,6 +8,11 @@ body {
   color: #2E2633;
 }
 
+a:hover{
+  color: #99173C;
+  text-decoration: none;
+}
+
 h1 {
   font-size: 2em;
   text-align: center;
@@ -24,7 +29,7 @@ label.file-upload input[type="file"] {
   display: block;
 }
 
-.file-upload span {
+.button {
   background-color: #DCE9BE;
   padding: 10px;
   border-radius: 5px;
@@ -58,4 +63,13 @@ canvas {
   display: block;
   text-align: center;
   margin-bottom: 3em;
+}
+
+.another_wrap {
+  text-align: center;
+}
+.another {
+  display: inline-block;
+  font-size: 0.8em;
+  margin-top: 2em;
 }
