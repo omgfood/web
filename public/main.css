@@ -1,0 +1,55 @@
+*{
+  font-family: 'Amatic SC', cursive !important;
+}
+
+body {
+  font-size: 25px;
+  background-color: #EFFFCD;
+  color: #2E2633;
+}
+
+h1 {
+  font-size: 5em;
+  text-align: center;
+}
+
+label.file-upload input[type="file"] {
+  position: fixed;
+  top: -1000px;
+}
+
+.file-upload {
+  margin-top: 5em;
+  text-align: center;
+  display: block;
+}
+
+.file-upload span {
+  background-color: #DCE9BE;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #99173C;
+}
+
+canvas {
+  display: block;
+  margin: auto;
+}
+
+.text {
+  width: 320px;
+  margin: auto;
+}
+
+.result img {
+  display: block;
+  margin: auto;
+  margin-top: 2em;
+}
+
+.result strong {
+  display: block;
+  text-align: center;
+  margin-bottom: 3em;
+}

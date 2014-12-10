@@ -1,7 +1,11 @@
-<canvas width="320" height="240" id="picture"></canvas>
-<input id="Take-Picture" type="file" accept="image/*;capture=camera" />
-<p id="textbit"></p>
+<canvas width="320" id="picture" style="display:none"></canvas>
 
-<p class="result">
-  
-</p>  
+
+<div class="text">
+  <label class="file-upload">
+    <input id="Take-Picture" type="file" accept="image/*;capture=camera" />
+    <span>Activate your camera</span>
+  </label>
+  <p id="textbit"></p>
+  <p class="result"></p>  
+</div>

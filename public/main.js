@@ -1,7 +1,13 @@
+$('#Take-Picture').change( function() {
+  $(".file-upload").hide();
+  $("canvas").show();
+});
+
 var takePicture = document.querySelector("#Take-Picture"),
-showPicture = document.createElement("img");
-Result = document.querySelector("#textbit");
-var canvas =document.getElementById("picture");
+  showPicture = document.createElement("img");
+  Result = document.querySelector("#textbit");
+
+var canvas = document.getElementById("picture");
 var ctx = canvas.getContext("2d");
 JOB.Init();
 JOB.SetImageCallback(function(result) {
@@ -12,13 +18,25 @@ JOB.SetImageCallback(function(result) {
       $('.result').html("Querying TESCO API.....");
       $.get(
         "/barcode_search",
-        'id=' + result[i].Value,
+        'id=' + 5018357009916,
         function(response) {
-          $('.result').html('<img src="' + response['ImagePath'] + '" /><br />');
-          for (var key in response) {
-            if (response.hasOwnProperty(key)) {
-              $('.result').append(key + ": " + response[key] + '<br />');
-            }
+          console.log(response);
+          if(response == 'notfound'){
+            $('.result').html("Couldn't find anything matching that baercode");
+          }else{
+            $('canvas').hide();
+            $('#textbit').hide();
+            $('.result').html(
+              '<img src="' + response['ImagePath'] + '" /><br />' +
+              '<strong>' + response['Name'] + '</strong>' +
+              '<p class="nutrition">'+
+                'Calories: ' + response['RDA_Calories_Count'] + '<br />' +
+                'Fat: ' + response['RDA_Fat_Grammes'] + 'g<br />' +
+                'Salt: ' + response['RDA_Salt_Grammes'] + 'g<br />' +
+                'Saturates: ' + response['RDA_Saturates_Grammes'] + 'g<br />' +
+                'Sugar: ' + response['RDA_Sugar_Grammes'] + 'g<br />' +
+              '</p>'
+            );
           }
         }
       );

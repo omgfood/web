@@ -16,9 +16,14 @@ get '/barcode_search' do
 
   # API request for detailed info about the product associated with the barcode
   barcode_id = params[:id]
-  t.api_request(
+  results = t.api_request(
     'productsearch',
     searchtext: barcode_id,
     EXTENDEDINFO: 'Y'
-  )['Products'][0].to_json
+  )['Products']
+  if results.length == 0
+    'notfound'
+  else
+    results[0]
+  end.to_json
 end
